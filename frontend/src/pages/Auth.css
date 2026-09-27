@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+.authPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef4ff 0%, #e5e7ff 45%, #eff6ff 100%);
+  padding: 24px;
+}
+
+.authCard {
+  width: min(1180px, 100%);
+  min-height: 760px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.13);
+}
+
+.formPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.imagePanel {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.imagePanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.7));
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 52px 42px;
+  color: #fff;
+  z-index: 1;
+}
+
+.brandBadge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.imageOverlay h2 {
+  font-size: clamp(2rem, 2vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.imageOverlay p {
+  max-width: 420px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.toggleRow {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+
+.toggleButton {
+  flex: 1;
+  border: 1px solid #dbe3f0;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleButton.active {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+}
+
+.authError {
+  min-height: 24px;
+  color: #dc2626;
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+}
+
+.bottomLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  font-size: 0.86rem;
+  color: #475569;
+}
+
+.bottomLinks span {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .authCard {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .imagePanel {
+    min-height: 260px;
+    order: -1;
+  }
+
+  .formPanel {
+    padding: 16px 0 32px;
+  }
+
+  .bottomLinks {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
